@@ -8,8 +8,8 @@
 
 - Sử dụng 3 tài liệu tiếng Việt trong thư mục `sources/` và bộ 49 câu hỏi
 - Mỗi câu hỏi lưu vị trí đoạn đáp án trong văn bản nguồn để làm bằng chứng tham chiếu
-- Tokenizer `vi_whitespace_v1` tính mỗi cụm ký tự liên tiếp không chứa khoảng trắng là một token. Đây là quy ước thống nhất cho thí nghiệm, không phải tokenizer BPE/WordPiece của một mô hình cụ thể
-- Mỗi Chunk lưu tài liệu nguồn, nội dung, số token và vị trí `start_char`–`end_char` trong văn bản gốc (`end_char` không bao gồm ký tự tại vị trí kết thúc)
+- Tokenizer sẽ tính mỗi cụm ký tự liên tiếp không chứa khoảng trắng là một token. Đây là quy ước thống nhất cho thí nghiệm, không phải tokenizer BPE/WordPiece của một mô hình cụ thể
+- Mỗi Chunk lưu tài liệu nguồn, nội dung, số token và vị trí trong văn bản gốc (không bao gồm ký tự tại vị trí kết thúc)
 
 ## 3. Các phương pháp được cài đặt
 
@@ -41,4 +41,4 @@ Gọi `C` là số ký tự
 - **Recursive:** mỗi cấp phân cách quét/đếm các phần văn bản; mô hình hóa là `O(qC)`, thường rút gọn thành `O(C)` khi `q` cố định.
 - **Semantic:** gồm xử lý văn bản, tạo Embedding và so sánh vector; có thể biểu diễn là `O(C + T_emb + Sd)`.
 
-Các ước lượng trên cần được đối chiếu với thời gian chạy thực tế. Chi phí đếm token, tạo Chunk, lưu kết quả và tạo Embedding không nên bị bỏ qua khi phân tích
+Các ước lượng trên được đối chiếu với thời gian chạy thực tế. Chi phí đếm token, tạo Chunk, lưu kết quả và tạo Embedding không bị bỏ qua khi phân tích
