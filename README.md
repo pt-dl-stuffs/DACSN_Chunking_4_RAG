@@ -29,11 +29,11 @@ Các chỉ số được tính gồm **Precision@K**, **Recall@K**, **MRR** và 
 
 ## 5. Phân tích độ phức tạp
 
-Gọi `C` là số ký tự
-    `T` là số token
-    `S` là số câu
-    `d` là số chiều Embedding
-    `q` là số cấp dấu phân cách
+Gọi `C` là số ký tự,
+    `T` là số token,
+    `S` là số câu,
+    `d` là số chiều Embedding,
+    `q` là số cấp dấu phân cách,
     `T_emb` là thời gian tạo Embedding
 
 - **Fixed-size:** xử lý tuyến tính theo văn bản; với kích thước và Overlap cố định, thời gian điển hình là `O(C)`.
